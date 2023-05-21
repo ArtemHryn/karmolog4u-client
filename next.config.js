@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  compiler: {
+    styledComponents: true,
+  },
+  experimental: {
+    appDir: true,
+  },
 
-module.exports = nextConfig
+  webpack(config) {
+    config.experiments = {
+      ...config.experiments,
+      topLevelAwait: true,
+    };
+    return config;
+  },
+};
+
+module.exports = nextConfig;
