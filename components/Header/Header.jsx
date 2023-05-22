@@ -30,10 +30,8 @@ export const Header = () => {
         <DesktopNav />
         <Box display="flex">
           <PersonalNav />
-          <SelectLang onChange={(e) => console.log(e.target.value)}>
-            <option>
-              <span>UA</span>
-            </option>
+          <SelectLang onChange={() => {}}>
+            <option>UA</option>
             <option>RU</option>
           </SelectLang>
         </Box>

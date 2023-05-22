@@ -1,6 +1,6 @@
 "use client";
 import { Header } from "@components/Header/Header";
-import { Roboto, Cormorant, Arimo } from "next/font/google";
+import { Roboto, Cormorant, Arimo, PT_Sans } from "next/font/google";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme.js";
 import "./globals.css";
@@ -15,12 +15,17 @@ export const cormorant = Cormorant({
 
 export const arial = Roboto({
   subsets: ["cyrillic"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "700", '300'],
 });
 
 export const arimo = Arimo({
   subsets: ["cyrillic"],
   weight: ["400", "500", "700"],
+});
+
+export const ptSans = PT_Sans({
+  subsets: ["cyrillic"],
+  weight: ["400", "700"],
 });
 
 export default function RootLayout({ children }) {

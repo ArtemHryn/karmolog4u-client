@@ -1,4 +1,5 @@
 export const navigationList = [
+  { name: "Головна", href: "/" },
   {
     name: "послуги",
     href: "services",

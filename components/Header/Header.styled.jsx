@@ -7,6 +7,7 @@ import { flexbox } from "styled-system";
 
 export const Menu = styled.header`
   display: flex;
+  z-index: 100;
   align-items: center;
   position: fixed;
   width: 100%;
