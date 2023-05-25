@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { Logo, NavigationLink, NavigationList } from "./Header.styled";
 import { Box } from "@components/Box";
-
-import { navigationList } from "@helper/navigationList";
+import { useTranslation } from "react-i18next";
 
 const DesktopNav = () => {
+  const { t } = useTranslation();
+  const nav = t("navList");
+  console.log(JSON.parse(nav));
   return (
     <Box
       display={["none", "none", "flex"]}
@@ -23,7 +25,7 @@ const DesktopNav = () => {
         />
       </Logo>
       <NavigationList flexDirection="row">
-        {navigationList.map(({ name, href }) => (
+        {JSON.parse(nav).map(({ name, href }) => (
           <li key={name}>
             <NavigationLink href={href} onClick={() => setshowMenu(false)}>
               {name}

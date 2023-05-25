@@ -10,7 +10,7 @@ const Hero = () => {
       pt={["300px", "350px", "500px"]}
       pb={["20px", "40px"]}
       pys={["0px", "0px", "0px"]}
-      bi={"/assets/images/Hero/SergiyDesk.webp"}
+      bi={['/assets/images/Hero/Sergiy.png',"/assets/images/Hero/SergiyDesk.webp"]}
     >
       <Box display={[null, null, "flex"]} justifyContent="space-between">
         <AuthorName className={cormorant.className}>
@@ -51,9 +51,9 @@ const Hero = () => {
         Скляренко
       </AuthorName>
       <ArrowDownLink href="#about">
-
-          <ArrowIcon width="82" height="82" />
+        <ArrowIcon width="82" height="82" />
       </ArrowDownLink>
+
     </Container>
   );
 };

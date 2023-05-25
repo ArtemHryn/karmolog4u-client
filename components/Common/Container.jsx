@@ -1,3 +1,4 @@
+"use client";
 import { Box } from "@components/Box";
 import React from "react";
 
@@ -5,9 +6,9 @@ const Container = ({ children, pys = null, bi, ...props }) => {
   return (
     <Box
       as="section"
-      py={pys ? pys : ["40px", "40px", "90px"]}
+      py={pys ? pys : ["40px", "40px", "40px"]}
       position="relative"
-      backgroundImage={[`url('${bi}')`]}
+      backgroundImage={bi ? bi.map((img) => `url('${img}')`) : null}
       backgroundPosition="right top"
       backgroundRepeat="no-repeat"
       backgroundSize={"cover"}

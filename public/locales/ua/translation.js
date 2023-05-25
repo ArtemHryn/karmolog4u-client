@@ -1,4 +1,4 @@
-export const navigationList = [
+const navLing = JSON.stringify([
   { name: "Головна", href: "/" },
   {
     name: "послуги",
@@ -20,4 +20,15 @@ export const navigationList = [
     name: "калькулятор",
     href: "calculator",
   },
-];
+]);
+
+const ua = {
+  translation: {
+    name: "Welcome!",
+    introText: "This is the introduction text.",
+    formattedText: "Hello <strong>{{name}}</strong>, welcome to my app!",
+    navList: navLing,
+  },
+};
+
+export default ua;

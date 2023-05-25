@@ -7,6 +7,8 @@ import "./globals.css";
 import { Box } from "@components/Box.jsx";
 import Footer from "@components/Footer/Footer.jsx";
 import StyledComponentsRegistry from "./registry.jsx";
+import "../i18n.js";
+import { Suspense } from "react";
 
 export const cormorant = Cormorant({
   subsets: ["cyrillic"],
@@ -15,7 +17,7 @@ export const cormorant = Cormorant({
 
 export const arial = Roboto({
   subsets: ["cyrillic"],
-  weight: ["400", "500", "700", '300'],
+  weight: ["400", "500", "700", "300"],
 });
 
 export const arimo = Arimo({
@@ -32,15 +34,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ua">
       <Box as="body" bg="#e7e6e4">
-        <ThemeProvider theme={theme}>
-          <StyledComponentsRegistry>
-            <>
-              <Header />
-              {children}
-              <Footer />
-            </>
-          </StyledComponentsRegistry>
-        </ThemeProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ThemeProvider theme={theme}>
+            <StyledComponentsRegistry>
+              <>
+                <Header />
+                {children}
+                <Footer />
+              </>
+            </StyledComponentsRegistry>
+          </ThemeProvider>
+        </Suspense>
       </Box>
     </html>
   );

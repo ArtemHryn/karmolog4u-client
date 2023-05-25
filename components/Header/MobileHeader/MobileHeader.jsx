@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import {
   Backdrop,
   CloseIcon,
@@ -29,6 +31,9 @@ const animation = {
 };
 
 const MobileHeader = ({ setshowMenu }) => {
+  const { t } = useTranslation();
+  const nav = t("navList");
+
   const onCLoseMenu = (e) => {
     if (e.target === e.currentTarget) {
       setshowMenu(false);
@@ -57,7 +62,7 @@ const MobileHeader = ({ setshowMenu }) => {
             />
           </Logo>
           <NavigationList>
-            {navigationList.map(({ name, href }) => (
+            {JSON.parse(nav).map(({ name, href }) => (
               <li key={name}>
                 <NavigationLink href={href} onClick={() => setshowMenu(false)}>
                   {name}
